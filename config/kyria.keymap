@@ -41,7 +41,7 @@
 //                     | GUI  | LALT | LGUI |   RET   |  GRAVE  |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
 	&kp ESC   &lt _FN Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-	&kp TAB   &kp A &kp S &kp D &lt _NUMBER F &kp G                                                &kp H &kp J  &kp K     &kp L   &lt _SYMBOL SEMI &kp SQT
+	&kp TAB   &kp A &kp S &kp D &lt _NUMBER F &kp G                                                &kp H &kp J  &kp K     &kp L   &lt _SYMBOL SEMI &hm RGUI SQT
 	&kp LSHFT &mt LCTRL Z &kp X &kp C &kp V &kp B &kp LSHFT &mo _COLOR        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
 	                &kp K_MUTE &kp LALT &kp LGUI &kp RET &kp GRAVE       &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
 			>;
