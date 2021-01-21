@@ -59,7 +59,7 @@
 			bindings = <
 	&kp ESC   &lt _FN Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
 	&kp TAB   &kp A &kp S &kp D &lt _NUMBER F &kp G                                                &kp H &kp J  &kp K     &kp L   &lt _SYMBOL SEMI &hm RGUI SQT
-	&kp LSHFT &mt LCTRL Z &kp X &kp C &kp V &kp B &kp LSHFT &mo _COLOR        &to _NUMBER &none &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+	&kp LSHFT &mt LCTRL Z &kp X &kp C &kp V &kp B &kp LSHFT &mo _COLOR        &to _NUMBER &none &kp N &kp M  &kp COMMA &kp DOT &mt LCTRL FSLH &kp RSHFT
 	                &kp K_MUTE &kp LALT &kp LGUI &kp RET &kp GRAVE       &mo _CRAZY  &kp SPACE  &kp N0 &kp DOT &kp RCTL
 			>;
 
@@ -101,9 +101,9 @@
 
 		color_layer {
 			bindings = <
-	&kp ESC   &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI                                                &kp STAR &kp F7  &kp F8     &kp F9   &kp PLUS    &kp BSPC
-	&kp TAB   &rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD                                                &kp COLON &kp F4  &kp F5     &kp F6   &kp MINUS &kp UNDER
-	&kp LSHFT &mt LCTRL Z &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(90,100,100) &rgb_ug RGB_COLOR_HSB(120,100,100) &rgb_ug RGB_COLOR_HSB(270,100,100) &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp AMPS &kp F1  &kp F2 &kp F3 &kp EQUAL &kp RSHFT
+	&bootloader   &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI                                                &kp STAR &kp F7  &kp F8     &kp F9   &kp PLUS    &kp BSPC
+	&reset        &rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD                                                &kp COLON &kp F4  &kp F5     &kp F6   &kp MINUS &kp UNDER
+	&kp LSHFT     &mt LCTRL Z &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(90,100,100) &rgb_ug RGB_COLOR_HSB(120,100,100) &rgb_ug RGB_COLOR_HSB(270,100,100) &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp AMPS &kp F1  &kp F2 &kp F3 &kp EQUAL &kp RSHFT
 	                &kp LGUI &ext_power EP_OFF &ext_power EP_ON &kp RET &rgb_ug RGB_TOG       &kp RET  &kp SPACE  &kp F10 &kp BSPC &kp RALT
 			>;
 
@@ -114,7 +114,7 @@
 			bindings = <
 	&none   &none &none &none &none &none                                         &none &none  &none     &none   &none    &none
 	&none   &none &kp LA(LG(N5)) &none &none &none                                &none &none  &none     &none   &none    &none
-	&none   &none &none &kp LS(LC(LG(C))) &none &none   &none &none        &none &none        &none &none  &none     &none   &none    &none
+	&none   &none &none &kp LS(LC(LG(C))) &none &none   &none &none        &none &none        &none &kp LS(LC(LA(LG(M))))  &none     &none   &none    &none
 	                    &none &none &none   &none &none        &none &none        &none &none  &none
 			>;
 
