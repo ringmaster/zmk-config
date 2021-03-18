@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // west build -d build/left -b nice_nano -- -DSHIELD=kyria_left
 // west build -d build/right -b nice_nano -- -DSHIELD=kyria_right
@@ -36,8 +38,14 @@
     compatible = "zmk,combos";
     combo_ret {
       timeout-ms = <50>;
-      key-positions = <19 20>;
+      key-positions = <19 20>; // J K
       bindings = <&kp RET>;
+    };
+
+    combo_space {
+      timeout-ms = <50>;
+      key-positions = <14 16>; // S F
+      bindings = <&kp SPACE>;
     };
     
     combo_cmdspace {
@@ -57,9 +65,9 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | GUI  | LALT | LGUI |   RET   |  GRAVE  |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
-	&kp ESC    &lt _FN Q    &kp W  &kp E       &kp R          &kp T                                                  &kp Y   &kp U    &kp I      &kp O    &kp P             &kp BSPC
-	&kp TAB    &kp A        &kp S  &kp D       &lt _NUMBER F  &kp G                                                  &kp H   &kp J    &kp K      &kp L    &lt _SYMBOL SEMI  &hm RGUI SQT
-	&kp LSHFT  &mt LCTRL Z  &kp X  &kp C       &kp V          &kp B     &none    &mo _COLOR  &to _NUMBER  &none      &kp N   &kp M    &kp COMMA  &kp DOT  &mt RCTRL FSLH    &kp RSHFT
+	&kp ESC       &lt _FN Q    &kp W  &kp E       &kp R          &kp T                                                  &kp Y   &kp U    &kp I      &kp O    &kp P             &kp BSPC
+	&kp TAB       &kp A        &kp S  &kp D       &lt _NUMBER F  &kp G                                                  &kp H   &kp J    &kp K      &kp L    &lt _SYMBOL SEMI  &hm RGUI SQT
+	&mt LSHFT ESC &mt LCTRL Z  &kp X  &kp C       &kp V          &kp B     &none    &mo _COLOR  &to _NUMBER  &none      &kp N   &kp M    &kp COMMA  &kp DOT  &mt RCTRL FSLH    &kp RSHFT
 	                               &kp K_MUTE  &kp LALT       &kp LGUI  &kp RET  &kp GRAVE   &sl _CRAZY   &kp SPACE  &kp N0  &kp DOT  &kp RCTL
 			>;
 
@@ -101,9 +109,9 @@
 
 		color_layer {
 			bindings = <
-	&bootloader  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI                   &rgb_ug RGB_BRI                    &rgb_ug RGB_SAI                     &rgb_ug RGB_HUI                                                               &none  &none  &none  &none  &none  &none
-	&reset       &rgb_ug RGB_EFR  &rgb_ug RGB_SPD                   &rgb_ug RGB_BRD                    &rgb_ug RGB_SAD                     &rgb_ug RGB_HUD                                                               &none  &none  &none  &none  &none  &none
-	&kp LSHFT    &mt LCTRL Z      &rgb_ug RGB_COLOR_HSB(0,100,100)  &rgb_ug RGB_COLOR_HSB(90,100,100)  &rgb_ug RGB_COLOR_HSB(120,100,100)  &rgb_ug RGB_COLOR_HSB(270,100,100)  &kp LSHFT  &none            &none  &none  &none  &none  &none  &none  &none  &none
+	&bootloader   &rgb_ug RGB_EFF  &rgb_ug RGB_SPI                   &rgb_ug RGB_BRI                    &rgb_ug RGB_SAI                     &rgb_ug RGB_HUI                                                               &none  &none  &none  &none  &none  &none
+	&reset        &rgb_ug RGB_EFR  &rgb_ug RGB_SPD                   &rgb_ug RGB_BRD                    &rgb_ug RGB_SAD                     &rgb_ug RGB_HUD                                                               &none  &none  &none  &none  &none  &none
+	&out OUT_TOG  &mt LCTRL Z      &rgb_ug RGB_COLOR_HSB(0,100,100)  &rgb_ug RGB_COLOR_HSB(90,100,100)  &rgb_ug RGB_COLOR_HSB(120,100,100)  &rgb_ug RGB_COLOR_HSB(270,100,100)  &kp LSHFT  &none            &none  &none  &none  &none  &none  &none  &none  &none
 	                                                                &kp LGUI                           &ext_power EP_OFF                   &ext_power EP_ON                    &kp RET    &rgb_ug RGB_TOG  &none  &none  &none  &none  &none
 			>;
 
@@ -112,10 +120,10 @@
 
 		crazy_layer {
 			bindings = <
-	&none  &none  &none           &none              &none  &none                              &none              &none                  &none  &none  &kp LG(BSLH)  &none
-	&none  &none  &kp LA(LG(N5))  &none              &none  &none                              &none              &none                  &none  &none  &none         &none
-	&none  &none  &none           &kp LS(LC(LG(C)))  &none  &none  &none  &none  &none  &none  &kp LC(LA(LG(N)))  &kp LS(LC(LA(LG(M))))  &none  &none  &none         &none
-	                              &none              &none  &none  &none  &none  &none  &none  &none              &none                  &none
+	&bt BT_SEL 2  &none  &none           &none              &none  &none                              &none              &none                  &none  &none  &kp LG(BSLH)  &bt BT_CLR
+	&bt BT_SEL 1  &none  &kp LA(LG(N5))  &none              &none  &none                              &none              &none                  &none  &none  &none         &none
+	&bt BT_SEL 0  &none  &none           &kp LS(LC(LG(C)))  &none  &none  &none  &none  &none  &none  &kp LC(LA(LG(N)))  &kp LS(LC(LA(LG(M))))  &none  &none  &none         &none
+	                                     &none              &none  &none  &none  &none  &none  &none  &none              &none                  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
