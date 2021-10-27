@@ -111,7 +111,7 @@
 			bindings = <
 	&bootloader   &rgb_ug RGB_EFF  &rgb_ug RGB_SPI                   &rgb_ug RGB_BRI                    &rgb_ug RGB_SAI                     &rgb_ug RGB_HUI                                                               &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &bootloader
 	&reset        &rgb_ug RGB_EFR  &rgb_ug RGB_SPD                   &rgb_ug RGB_BRD                    &rgb_ug RGB_SAD                     &rgb_ug RGB_HUD                                                               &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &reset
-	&out OUT_TOG  &mt LCTRL Z      &rgb_ug RGB_COLOR_HSB(0,100,100)  &rgb_ug RGB_COLOR_HSB(90,100,100)  &rgb_ug RGB_COLOR_HSB(120,100,100)  &rgb_ug RGB_COLOR_HSB(270,100,100)  &kp LSHFT  &none            &none  &none  &none  &none  &none  &none  &none  &kp U
+	&none         &mt LCTRL Z      &rgb_ug RGB_COLOR_HSB(0,100,100)  &rgb_ug RGB_COLOR_HSB(90,100,100)  &rgb_ug RGB_COLOR_HSB(120,100,100)  &rgb_ug RGB_COLOR_HSB(270,100,100)  &kp LSHFT  &none            &none  &none  &none  &none  &none  &none  &none  &kp U
 	                                                                &kp LGUI                           &ext_power EP_OFF                   &ext_power EP_ON                    &kp RET    &rgb_ug RGB_TOG  &none  &none  &none  &none  &none
 			>;
 
@@ -120,9 +120,9 @@
 
 		crazy_layer {
 			bindings = <
-	&bt BT_SEL 2  &none  &none           &none              &none  &none                              &none              &none                  &none  &none  &kp LG(BSLH)  &bt BT_CLR
-	&bt BT_SEL 1  &none  &kp LA(LG(N5))  &none              &none  &none                              &none              &none                  &none  &none  &none         &none
-	&bt BT_SEL 0  &none  &none           &kp LS(LC(LG(C)))  &none  &none  &none  &none  &none  &none  &kp LC(LA(LG(N)))  &kp LS(LC(LA(LG(M))))  &none  &none  &none         &none
+	&bt BT_SEL 2  &out OUT_USB  &none           &none              &none  &none                              &none              &none                  &none  &none  &kp LG(BSLH)  &bt BT_CLR
+	&bt BT_SEL 1  &out OUT_BLE  &kp LA(LG(N5))  &none              &none  &none                              &none              &none                  &none  &none  &none         &none
+	&bt BT_SEL 0  &out OUT_TOG  &none           &kp LS(LC(LG(C)))  &none  &none  &none  &none  &none  &none  &kp LC(LA(LG(N)))  &kp LS(LC(LA(LG(M))))  &none  &none  &none         &none
 	                                     &none              &none  &none  &none  &none  &none  &none  &none              &none                  &none
 			>;
 
